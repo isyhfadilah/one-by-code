@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One by Code - Aktivitas</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <h2>One by Code</h2>
+
+        <nav>
+            <ul>
+                <li><a href="../landing/index.html">Beranda</a></li>
+                <li><a href="../activity/index.html" class="active">Aktivitas</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="jadwal">
+            <div class="container">
+                <h2>Jadwal Kegiatan</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hari</th>
+                            <th>Waktu</th>
+                            <th>Kegiatan</th>
+                            <th>Tempat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Senin</td>
+                            <td>16.00-18.00</td>
+                            <td>Web Development Basics</td>
+                            <td>Lab Komputer A</td>
+                        </tr>
+                        <tr>
+                            <td>Rabu</td>
+                            <td>15.00-17.00</td>
+                            <td>Data Science Workshop</td>
+                            <td>Lab Komputer B</td>
+                        </tr>
+                        <tr>
+                            <td>Jumat</td>
+                            <td>14.00-16.00</td>
+                            <td>Mobile App Development</td>
+                            <td>Lab Komputer C</td>
+                        </tr>
+                        <tr>
+                            <td>Sabtu</td>
+                            <td>09.00-12.00</td>
+                            <td>Project Collaboration</td>
+                            <td>Co-working Space</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="galeri">
+            <div class="container">
+                <h2>Galeri Kegiatan</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1517309561013-16f6e4020305?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Workshop Web Development untuk mahasiswa">
+                        <p>Workshop Web Development</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1625335534303-a3c1a3744694?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Kompetisi Hackathon tahunan">
+                        <p>Hackathon Competition</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1733222765056-b0790217baa9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Tech Talk dengan praktisi industri">
+                        <p>Tech Talk Session</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pendaftaran">
+            <div class="container">
+                <h2>Daftar Menjadi Anggota</h2>
+                <form id="form-pendaftaran">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nim">NIM</label>
+                        <input type="text" id="nim" name="nim" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fakultas">Fakultas</label>
+                        <select id="fakultas" name="fakultas" required>
+                            <option value="">Pilih Fakultas</option>
+                            <option value="teknik">Teknik</option>
+                            <option value="sains">Sains & Teknologi</option>
+                            <option value="komputer">Ilmu Komputer</option>
+                            <option value="lainnya">Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="minat">Minat Pemrograman</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="minat" value="web"> Web Development
+                            </label>
+                            <label>
+                                <input type="checkbox" name="minat" value="mobile"> Mobile Development
+                            </label>
+                            <label>
+                                <input type="checkbox" name="minat" value="ai"> AI & Data Science
+                            </label>
+                            <label>
+                                <input type="checkbox" name="minat" value="game"> Game Development
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pengalaman">Pengalaman Coding (jika ada)</label>
+                        <textarea id="pengalaman" name="pengalaman" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Daftar Sekarang</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>One by Code</h3>
+                    <p>Gedung Student Center Lt. 3</p>
+                    <p>Satu University</p>
+                    <p>Email: onebycode@satu.ac.id</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Ikuti Kami</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 One by Code. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('form-pendaftaran').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Terima kasih telah mendaftar! Kami akan menghubungi Anda melalui email.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
