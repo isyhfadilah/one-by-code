@@ -1,19 +1,24 @@
 :root {
     --color-primary: #050b28;
     --color-secondary: #274f8b;
-    --color-accent: #c25746;
-
+    --color-accent: #4481dc;
+    --color-accent-contrast: #ffffff;
     --glass-bg: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
     --glass-blur: blur(10px);
     --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     --glass-backdrop: rgba(255, 255, 255, 0.18);
+    --color-accent-gradient: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -25,6 +30,15 @@ body {
         radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
 }
 
+header h2 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -32,12 +46,11 @@ body {
 }
 
 header {
-    background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border-bottom: 1px solid var(--glass-border);
     color: white;
-    padding: 1rem 4rem;
+    padding: 0.8rem 6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,12 +58,11 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--glass-shadow);
+    box-sizing: border-box;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+header h2 span {
+    color: var(--color-accent);
 }
 
 header p {
@@ -74,41 +86,57 @@ nav a {
     padding: 0.5rem;
 }
 
-nav a.active {
+nav a:hover {
+    color: var(--color-accent);
+}
+
+/* nav a.active {
     color: white;
     border-bottom: 2px solid white;
-}
+} */
 
 section {
     padding: 5rem 0;
 }
 
-#jadwal .container {
-    margin-top: 100px;
-}
-
 #hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-        url('https://images.unsplash.com/photo-1533206482744-b9766a45e98a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(180deg, rgba(5, 11, 40, 0.95) 0%, rgba(5, 11, 40, 0.92) 50%, rgba(5, 11, 40, 0.9) 100%);
     color: white;
     text-align: center;
     padding: 18rem 0 15rem 0;
     position: relative;
 }
 
-#hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+#hero span {
+    color: var(--color-accent);
 }
 
-#hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+#hero a {
+    margin-top: 2rem;
+}
+
+#keunggulan {
+    background: linear-gradient(180deg, rgba(5, 11, 40, 0.9) 0%, rgba(5, 11, 40, 0.88) 50%, rgba(5, 11, 40, 0.88) 100%);
+}
+
+#review {
+    background: linear-gradient(180deg, rgba(5, 11, 40, 0.82) 0%, rgba(5, 11, 40, 0.8) 50%, rgba(5, 11, 40, 0.8) 100%);
+}
+
+#pendaftaran {
+    background: linear-gradient(180deg, rgba(5, 11, 40, 0.95) 0%, rgba(39, 79, 139, 0.15) 100%);
+
+}
+
+
+#hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+#about {
+    background: linear-gradient(180deg, rgba(5, 11, 40, 0.95) 0%, rgba(5, 11, 40, 0.92) 50%, rgba(5, 11, 40, 0.9) 100%);
 }
 
 .about-content {
@@ -143,7 +171,7 @@ section {
     text-shadow: none;
 }
 
-#tentang h2 span {
+#about h2 span {
     color: var(--color-accent);
 }
 
@@ -178,7 +206,7 @@ section {
 .feature:hover {
     transform: translateY(-5px) scale(1.02);
     border-color: var(--color-secondary);
-    box-shadow: 0 12px 40px rgba(194, 87, 70, 0.2);
+    box-shadow: 0 12px 40px rgba(10, 139, 116, 0.15);
 }
 
 .feature h3 {
@@ -222,44 +250,6 @@ th {
 
 tr:hover {
     background: var(--glass-backdrop);
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.gallery-item {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--glass-shadow);
-    transition: all 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px) scale(1.02);
-    border-color: var(--color-accent);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 20px 20px 0 0;
-}
-
-.gallery-item p {
-    padding: 1rem;
-    text-align: center;
-    font-weight: 600;
-    color: white;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 form {
@@ -312,7 +302,7 @@ select:focus,
 textarea:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(194, 87, 70, 0.2);
+    box-shadow: 0 0 0 3px rgba(10, 139, 116, 0.18);
 }
 
 .checkbox-group {
@@ -351,6 +341,11 @@ textarea:focus {
     box-shadow: var(--glass-shadow);
 }
 
+.btn:hover {
+    background: var(--color-accent);
+    box-shadow: 0 8px 30px rgba(10, 139, 116, 0.2);
+}
+
 #pendaftaran h2 {
     text-align: center;
     margin-bottom: 2rem;
@@ -358,9 +353,244 @@ textarea:focus {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+#produk {
+    background: linear-gradient(180deg, rgba(5, 11, 40, 0.88) 0%, rgba(5, 11, 40, 0.86) 50%, rgba(5, 11, 40, 0.86) 100%);
+}
+
+#produk h2 span {
+    color: var(--color-accent);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: var(--glass-shadow);
+}
+
+.service-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--color-accent);
+    box-shadow: 0 12px 40px rgba(10, 139, 116, 0.22);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    color: var(--color-accent);
+}
+
+.service-icon i {
+    font-size: 3rem;
+    color: var(--color-accent);
+}
+
+.service-card h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.service-card p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+}
+
+.service-list li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.service-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+#review {
+    padding: 5rem 0;
+}
+
+#review h2 {
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+.review-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+    display: none;
+}
+
+.testimonials-slider {
+    position: relative;
+    margin-top: 2rem;
+    padding: 0 60px;
+    overflow: hidden;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.45s cubic-bezier(.22, .9, .36, 1);
+    will-change: transform;
+}
+
+.testimonials-track .testimonial-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 30;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.slider-btn.prev {
+    left: 0;
+}
+
+.slider-btn.next {
+    right: 0;
+}
+
+/* Responsive: show 2 per view on medium screens, 3 on large */
+@media (min-width: 720px) {
+    .testimonials-track .testimonial-card {
+        flex: 0 0 calc(50% - 0.75rem);
+        min-width: calc(50% - 0.75rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .testimonials-track .testimonial-card {
+        flex: 0 0 calc(33.333% - 1rem);
+        min-width: calc(33.333% - 1rem);
+    }
+}
+
+/* Make buttons less obtrusive on small screens */
+@media (max-width: 720px) {
+    .slider-btn {
+        width: 38px;
+        height: 38px;
+        left: 8px;
+        right: 8px;
+        opacity: 0.9;
+    }
+
+    .slider-btn.prev {
+        left: 8px;
+    }
+
+    .slider-btn.next {
+        right: 8px;
+    }
+}
+
+.testimonial-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+}
+
+.author-info h4 {
+    color: white;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.author-info p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin: 0;
+}
 
 footer {
-    background: var(--glass-bg);
+    background: linear-gradient(180deg, rgba(39, 79, 139, 0.15) 100%);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border-top: 1px solid var(--glass-border);
